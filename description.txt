@@ -1,0 +1,75 @@
+Far too many Storage Systems operate by Slots. The problem with this concept is that they limit how many different kinds of items you can fit inside. What if the Player were to indulge in the collection of hundreds of distinct herbs for cooking/potions, but are stocked up with other luggage?
+
+This irritable consistency is why I directed the main focus of this project toward providing an alternative way of storing items.
+
+**Features:**
+-The Bundle, a unique container type that counts items by List, not by Slot, allowing a variety of materials/ingredients to be stored.
+-Right-Click to stow/withdraw items. Shift-Right-Click to withdraw in Reverse Order.
+-Hold "Up" while hovering your cursor over a bundle to preview the controls for it.
+-These come in a few tiers, increasing in Max Capacity with each successor. (configurable)
+
+**Bundle Types**
+-Bundle: Standard bag. Holds a decent amount of Stackables.
+-Pouch: Smaller, lighter alternative to the Bundle.
+-Double Scabbard: Holds 3 weapons/tools.
+-Apparel Case: Holds 5 clothing, accessories or armor.
+
+
+-Credits-
+-DarioDaF: Helped me fix the "Universal Item List" and "Items Don't Derive" bugs and aided with many features in this project.
+-Logar: Main Spriter.
+-absoluteAquarian and GabeHasWon: Pointed out to me the misspelling and logic errors within the ModifyTooltips Hook.
+-stormytuna and Jopojelly: Helped with the "Display Capacity" feature.
+
+
+-v0.1-
+-Initial release.
+
+-v0.1.1-
+-Bundles can now be emptied by swinging them.
+-Increased the Silk and Leather Bundles' crafting cost from 10 to 15.
+-Slightly edited the Mod Description.
+
+-v0.1.2-
+-Controls can now be previewed by holding "Up" while your hand is hovering over a bundle.
+-Added the Crude Pouch, a lighter alternative to the Crude Bundle.
+-Current Capacity is now displayed. (Thank you, stormytuna and Jopojelly.)
+
+-v0.1.3-
+-Current Capacity is now colored Cyan for distinction.
+-Changed the Leather Bundle sprite.
+
+-v0.1.4-
+-Reduced the Leather Bundle's Max Capacity from 99 to 75.
+-Added the Silk and Leather Pouches.
+
+-v0.1.5-
+-Added the Double Scabbard, a new Bundle type capable of holding 3 different tools or weapons.
+-The Leather Bundle has been reshaded. (Thanks, Logar.)
+-Recolored the Leather Pouch.
+-Added the Apparel Case, a new Bundle type capable of holding 5 different clothing, accessories or armor.
+-Increased the Max Capacity of both the Leather Pouch and Silk Pouch by 5.
+
+-v0.1.6-
+-Fixed the crafting recipes of the Apparel Case and the Double Scabbard.
+
+-v0.1.7-
+-Fixed the mod for the recent Terraria update.
+
+-v0.1.8-
+-(DarioDAF): Small fix for Terraria update and refactoring.
+-Added config options for bundle capacities and recipes.
+-Rearranged the Credits list in Alphabetical Order.
+
+-v0.1.8.1-
+-Updated the mod for the May update of tModLoader. Items can now be dumped out by swinging bundles again.
+-Updated the Mod Icon.
+
+-v0.1.8.2-
+-The "Items Don't Derive" bug has been fixed. (Thanks, Dario.)
+-Bundle Carry Amounts can now be changed without a Mod Reload. (Also thanks to Dario.)
+
+-v0.1.8.3-
+-[Config] Raised the maximum Capacity from 100 to 200.
+-Added the Cheat Bundle. It is only obtainable through cheat mods like Cheat Sheet or HERO's Mod.
+-Added Item Chat Tags to the config.

@@ -1,0 +1,3 @@
+Planned features:
+-Individual keybinds for Withdraw Last, Withdraw Second-to-First when Right-Clicking.
+-Possibly add a "Black Hole" bag. (Refer to the comment on Steam.)
