@@ -30,10 +30,17 @@ namespace Bundles.Items
 		{
 			if (BundlesConfig.Instance.enableDoubleScabbardRecipe)
 			{
-				CreateRecipe(1)
-				.AddIngredient(ItemID.Leather, 10)
-				.AddTile(TileID.Loom)
-				.Register();
+				Recipe Bundle = CreateRecipe(1);
+				Bundle.AddIngredient(ItemID.Leather, BundlesConfig.Instance.amountDoubleScabbard);
+				if (BundlesConfig.Instance.enableDoubleScabbardRecipeWorkBench)
+				{
+					Bundle.AddTile(TileID.WorkBenches);
+				}
+				if (BundlesConfig.Instance.enableDoubleScabbardRecipeLoom)
+				{
+					Bundle.AddTile(TileID.Loom);
+				}
+				Bundle.Register();
 			}
 		}
 		

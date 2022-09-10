@@ -17,7 +17,7 @@ namespace Bundles.Items
 		override protected int GetMaxCapacity() => BundlesConfig.Instance.capacityCheatBundle;
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Crude Bundle");
+			DisplayName.SetDefault("Cheat Bundle");
 		}
 	}
 }

@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using Terraria;
 using Terraria.ID;
+using Terraria.DataStructures;
 using Terraria.ModLoader;
 using Terraria.ModLoader.IO;
 using Microsoft.Xna.Framework; //Text Colors.
@@ -25,9 +26,17 @@ namespace Bundles.Items
 		{
 			if (BundlesConfig.Instance.enableCrudePouchRecipe)
 			{
-				CreateRecipe(1)
-				.AddIngredient(ItemID.Cobweb, 10)
-				.Register();
+				Recipe Bundle = CreateRecipe(1);
+				Bundle.AddIngredient(ItemID.Cobweb, BundlesConfig.Instance.amountCrudePouch);
+				if (BundlesConfig.Instance.enableCrudePouchRecipeWorkBench)
+				{
+					Bundle.AddTile(TileID.WorkBenches);
+				}
+				if (BundlesConfig.Instance.enableCrudePouchRecipeLoom)
+				{
+					Bundle.AddTile(TileID.Loom);
+				}
+				Bundle.Register();
 			}
 		}
 

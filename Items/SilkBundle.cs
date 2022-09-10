@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using Terraria;
 using Terraria.ID;
+using Terraria.DataStructures;
 using Terraria.ModLoader;
 using Terraria.ModLoader.IO;
 using Microsoft.Xna.Framework; //Text Colors.
@@ -24,10 +25,17 @@ namespace Bundles.Items
 		{
 			if (BundlesConfig.Instance.enableSilkBundleRecipe)
 			{
-				CreateRecipe(1)
-				.AddIngredient(ItemID.Silk, 15)
-				.AddTile(TileID.Loom)
-				.Register();
+				Recipe Bundle = CreateRecipe(1);
+				Bundle.AddIngredient(ItemID.Silk, BundlesConfig.Instance.amountSilkBundle);
+				if (BundlesConfig.Instance.enableSilkBundleRecipeWorkBench)
+				{
+					Bundle.AddTile(TileID.WorkBenches);
+				}
+				if (BundlesConfig.Instance.enableSilkBundleRecipeLoom)
+				{
+					Bundle.AddTile(TileID.Loom);
+				}
+				Bundle.Register();
 			}
 		}
 		

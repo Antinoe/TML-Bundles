@@ -30,11 +30,19 @@ namespace Bundles.Items
 		{
 			if (BundlesConfig.Instance.enableApparelCaseRecipe)
 			{
-				CreateRecipe(1)
-				.AddRecipeGroup(RecipeGroupID.IronBar, 2)
-				.AddRecipeGroup(RecipeGroupID.Wood, 10)
-				.AddTile(TileID.WorkBenches)
-				.Register();
+				Recipe Bundle = CreateRecipe(1);
+				Bundle.AddRecipeGroup(RecipeGroupID.Wood, BundlesConfig.Instance.amountApparelCaseWood);
+				Bundle.AddIngredient(ItemID.Leather, BundlesConfig.Instance.amountApparelCaseLeather);
+				Bundle.AddRecipeGroup(RecipeGroupID.IronBar, BundlesConfig.Instance.amountApparelCaseIronBar);
+				if (BundlesConfig.Instance.enableApparelCaseRecipeWorkBench)
+				{
+					Bundle.AddTile(TileID.WorkBenches);
+				}
+				if (BundlesConfig.Instance.enableApparelCaseRecipeLoom)
+				{
+					Bundle.AddTile(TileID.Loom);
+				}
+				Bundle.Register();
 			}
 		}
 		
