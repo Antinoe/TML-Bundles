@@ -1,3 +1,5 @@
+Supplies the game with a variety of portable containers that store items by List, not by Slot.
+
 Far too many Storage Systems operate by Slots. The problem with this concept is that they limit how many different kinds of items you can fit inside. What if the Player were to indulge in the collection of hundreds of distinct herbs for cooking/potions, but are stocked up with other luggage?
 
 This irritable consistency is why I directed the main focus of this project toward providing an alternative way of storing items.
@@ -20,6 +22,7 @@ This irritable consistency is why I directed the main focus of this project towa
 -Logar: Main Spriter.
 -absoluteAquarian and GabeHasWon: Pointed out to me the misspelling and logic errors within the ModifyTooltips Hook.
 -stormytuna and Jopojelly: Helped with the "Display Capacity" feature.
+-Liz Valentine: Showed me how to turn Chains into.. whatever that Variable Method is, allowing ``if`` Statements within Recipes.
 
 
 -v0.1-
@@ -73,3 +76,10 @@ This irritable consistency is why I directed the main focus of this project towa
 -[Config] Raised the maximum Capacity from 100 to 200.
 -Added the Cheat Bundle. It is only obtainable through cheat mods like Cheat Sheet or HERO's Mod.
 -Added Item Chat Tags to the config.
+
+-v0.1.9-
+[+] Added the ability to configure how many materials are required to craft each Bundle.
+[+] Added options to deterimine whether or not each Bundle requires a Workbench/Loom. (Thanks, Liz.)
+[=] Fixed the Display Name of the Cheat Bundle. It used to still be Crude Bundle.
+[=] Adjusted some Descriptions within the Config.
+[=] Tweaked the Description a bit to be a little more Steam-friendly.
