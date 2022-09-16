@@ -109,7 +109,7 @@ namespace Bundles
 		[Tooltip("How many materials are required to craft this.\n(REQUIRES MOD RELOAD.)\n[Default: 10]")]
 		[Slider]
 		[DefaultValue(10)]
-		[Range(0, 100)]
+		[Range(1, 100)]
 		[Increment(1)]
 		public int amountCrudePouch {get; set;}
 		
@@ -135,7 +135,7 @@ namespace Bundles
 		[Tooltip("How many materials are required to craft this.\n(REQUIRES MOD RELOAD.)\n[Default: 30]")]
 		[Slider]
 		[DefaultValue(30)]
-		[Range(0, 100)]
+		[Range(1, 100)]
 		[Increment(1)]
 		public int amountCrudeBundle {get; set;}
 		
@@ -161,7 +161,7 @@ namespace Bundles
 		[Tooltip("How many materials are required to craft this.\n(REQUIRES MOD RELOAD.)\n[Default: 10]")]
 		[Slider]
 		[DefaultValue(10)]
-		[Range(0, 100)]
+		[Range(1, 100)]
 		[Increment(1)]
 		public int amountSilkPouch {get; set;}
 		
@@ -187,7 +187,7 @@ namespace Bundles
 		[Tooltip("How many materials are required to craft this.\n(REQUIRES MOD RELOAD.)\n[Default: 15]")]
 		[Slider]
 		[DefaultValue(15)]
-		[Range(0, 100)]
+		[Range(1, 100)]
 		[Increment(1)]
 		public int amountSilkBundle {get; set;}
 		
@@ -213,7 +213,7 @@ namespace Bundles
 		[Tooltip("How many materials are required to craft this.\n(REQUIRES MOD RELOAD.)\n[Default: 10]")]
 		[Slider]
 		[DefaultValue(10)]
-		[Range(0, 100)]
+		[Range(1, 100)]
 		[Increment(1)]
 		public int amountLeatherPouch {get; set;}
 		
@@ -239,7 +239,7 @@ namespace Bundles
 		[Tooltip("How many materials are required to craft this.\n(REQUIRES MOD RELOAD.)\n[Default: 15]")]
 		[Slider]
 		[DefaultValue(15)]
-		[Range(0, 100)]
+		[Range(1, 100)]
 		[Increment(1)]
 		public int amountLeatherBundle {get; set;}
 		
@@ -265,7 +265,7 @@ namespace Bundles
 		[Tooltip("How much Wood is required to craft this.\n(REQUIRES MOD RELOAD.)\n[Default: 10]")]
 		[Slider]
 		[DefaultValue(10)]
-		[Range(0, 100)]
+		[Range(1, 100)]
 		[Increment(1)]
 		public int amountApparelCaseWood {get; set;}
 		
@@ -273,7 +273,7 @@ namespace Bundles
 		[Tooltip("How much Leather is required to craft this.\n(REQUIRES MOD RELOAD.)\n[Default: 0]")]
 		[Slider]
 		[DefaultValue(0)]
-		[Range(0, 100)]
+		[Range(1, 100)]
 		[Increment(1)]
 		public int amountApparelCaseLeather {get; set;}
 		
@@ -281,7 +281,7 @@ namespace Bundles
 		[Tooltip("How many Iron Bars are required to craft this.\n(REQUIRES MOD RELOAD.)\n[Default: 2]")]
 		[Slider]
 		[DefaultValue(2)]
-		[Range(0, 100)]
+		[Range(1, 100)]
 		[Increment(1)]
 		public int amountApparelCaseIronBar {get; set;}
 		
@@ -307,7 +307,7 @@ namespace Bundles
 		[Tooltip("How many materials are required to craft this.\n(REQUIRES MOD RELOAD.)\n[Default: 10]")]
 		[Slider]
 		[DefaultValue(10)]
-		[Range(0, 100)]
+		[Range(1, 100)]
 		[Increment(1)]
 		public int amountDoubleScabbard {get; set;}
 		
