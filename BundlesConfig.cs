@@ -270,9 +270,9 @@ namespace Bundles
 		public int amountApparelCaseWood {get; set;}
 		
 		[Label("[i:Bundles/ApparelCase][i:Leather] Apparel Case Leather Amount")]
-		[Tooltip("How much Leather is required to craft this.\n(REQUIRES MOD RELOAD.)\n[Default: 0]")]
+		[Tooltip("How much Leather is required to craft this.\n(REQUIRES MOD RELOAD.)\n[Default: 1]")]
 		[Slider]
-		[DefaultValue(0)]
+		[DefaultValue(1)]
 		[Range(1, 100)]
 		[Increment(1)]
 		public int amountApparelCaseLeather {get; set;}
