@@ -1,4 +1,4 @@
 displayName = Bundles - Simple Portable Storage
 author = Antinous, DarioDaF and Logar
-version = 0.1.9.1
+version = 0.1.9.2
 homepage = https://github.com/Antinoe/Bundles
