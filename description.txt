@@ -17,18 +17,12 @@ This irritable consistency is why I directed the main focus of this project towa
 -Apparel Case: Holds 5 clothing, accessories or armor.
 
 
-**Planned features:**
--Individual keybinds for Withdraw Last, Withdraw Second-to-First when Right-Clicking.
--A slew of Convenience Features, like using the MouseWheel to scroll the selected item in the hovered Bundle.
-
-
 -Credits-
 -DarioDaF: Helped me fix the "Universal Item List" and "Items Don't Derive" bugs and aided with many features in this project.
 -Logar: Main Spriter.
 -absoluteAquarian and GabeHasWon: Pointed out to me the misspelling and logic errors within the ModifyTooltips Hook.
 -stormytuna and Jopojelly: Helped with the "Display Capacity" feature.
 -Liz Valentine: Showed me how to turn Chains into.. whatever that Variable Method is, allowing ``if`` Statements within Recipes.
--absoluteAquarian: Helped me fix the Magic Storage incompatibility bug.
 
 
 -v0.1-
@@ -91,4 +85,4 @@ This irritable consistency is why I directed the main focus of this project towa
 [=] Tweaked the Description a bit to be a little more Steam-friendly.
 
 -v0.1.9.1-
-[=] Fixed the Magic Storage incompatibility bug. The two mods will now work when loaded together again. (Thanks, Aquarian.)
+[-] Removed the Iron Bar recipe group from the Apparel Case. It is now only crafted with Wood and Leather.

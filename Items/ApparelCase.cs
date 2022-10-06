@@ -33,7 +33,6 @@ namespace Bundles.Items
 				Recipe Bundle = CreateRecipe(1);
 				Bundle.AddRecipeGroup(RecipeGroupID.Wood, BundlesConfig.Instance.amountApparelCaseWood);
 				Bundle.AddIngredient(ItemID.Leather, BundlesConfig.Instance.amountApparelCaseLeather);
-				Bundle.AddRecipeGroup(RecipeGroupID.IronBar, BundlesConfig.Instance.amountApparelCaseIronBar);
 				if (BundlesConfig.Instance.enableApparelCaseRecipeWorkBench)
 				{
 					Bundle.AddTile(TileID.WorkBenches);
