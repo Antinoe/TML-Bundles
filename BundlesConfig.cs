@@ -14,49 +14,49 @@ namespace Bundles
 	[Header("General")]
 		
 		[Label("[i:Bundles/CrudePouch] Crude Pouch Capacity")]
-		[Tooltip("How many items this can hold.\n[Default: 10]")]
+		[Tooltip("How many items this can hold.\n[Default: 15]")]
 		[Slider]
-		[DefaultValue(10)]
+		[DefaultValue(15)]
 		[Range(5, 200)]
 		[Increment(5)]
 		public int capacityCrudePouch {get; set;}
 		
 		[Label("[i:Bundles/CrudeBundle] Crude Bundle Capacity")]
-		[Tooltip("How many items this can hold.\n[Default: 30]")]
+		[Tooltip("How many items this can hold.\n[Default: 45]")]
 		[Slider]
-		[DefaultValue(30)]
+		[DefaultValue(45)]
 		[Range(5, 200)]
 		[Increment(5)]
 		public int capacityCrudeBundle {get; set;}
 		
 		[Label("[i:Bundles/SilkPouch] Silk Pouch Capacity")]
-		[Tooltip("How many items this can hold.\n[Default: 25]")]
-		[Slider]
-		[DefaultValue(25)]
-		[Range(5, 200)]
-		[Increment(5)]
-		public int capacitySilkPouch {get; set;}
-		
-		[Label("[i:Bundles/SilkBundle] Silk Bundle Capacity")]
-		[Tooltip("How many items this can hold.\n[Default: 50]")]
-		[Slider]
-		[DefaultValue(50)]
-		[Range(5, 200)]
-		[Increment(5)]
-		public int capacitySilkBundle {get; set;}
-		
-		[Label("[i:Bundles/LeatherPouch] Leather Pouch Capacity")]
 		[Tooltip("How many items this can hold.\n[Default: 35]")]
 		[Slider]
 		[DefaultValue(35)]
 		[Range(5, 200)]
 		[Increment(5)]
-		public int capacityLeatherPouch {get; set;}
-
-		[Label("[i:Bundles/LeatherBundle] Leather Bundle Capacity")]
+		public int capacitySilkPouch {get; set;}
+		
+		[Label("[i:Bundles/SilkBundle] Silk Bundle Capacity")]
 		[Tooltip("How many items this can hold.\n[Default: 75]")]
 		[Slider]
 		[DefaultValue(75)]
+		[Range(5, 200)]
+		[Increment(5)]
+		public int capacitySilkBundle {get; set;}
+		
+		[Label("[i:Bundles/LeatherPouch] Leather Pouch Capacity")]
+		[Tooltip("How many items this can hold.\n[Default: 50]")]
+		[Slider]
+		[DefaultValue(50)]
+		[Range(5, 200)]
+		[Increment(5)]
+		public int capacityLeatherPouch {get; set;}
+
+		[Label("[i:Bundles/LeatherBundle] Leather Bundle Capacity")]
+		[Tooltip("How many items this can hold.\n[Default: 110]")]
+		[Slider]
+		[DefaultValue(110)]
 		[Range(5, 200)]
 		[Increment(5)]
 		public int capacityLeatherBundle { get; set; }
@@ -65,7 +65,7 @@ namespace Bundles
 		[Tooltip("How many items this can hold.\n[Default: 5]")]
 		[Slider]
 		[DefaultValue(5)]
-		[Range(1, 10)]
+		[Range(1, 20)]
 		[Increment(1)]
 		public int capacityApparelCase {get; set;}
 		
@@ -73,7 +73,7 @@ namespace Bundles
 		[Tooltip("How many items this can hold.\n[Default: 3]")]
 		[Slider]
 		[DefaultValue(3)]
-		[Range(1, 10)]
+		[Range(1, 20)]
 		[Increment(1)]
 		public int capacityDoubleScabbard {get; set;}
 		
@@ -106,9 +106,9 @@ namespace Bundles
 		public bool enableCrudePouchRecipeLoom {get; set;}
 		
 		[Label("[i:Bundles/CrudePouch][i:Cobweb] Crude Pouch Amount")]
-		[Tooltip("How many materials are required to craft this.\n(REQUIRES MOD RELOAD.)\n[Default: 10]")]
+		[Tooltip("How many materials are required to craft this.\n(REQUIRES MOD RELOAD.)\n[Default: 15]")]
 		[Slider]
-		[DefaultValue(10)]
+		[DefaultValue(15)]
 		[Range(1, 100)]
 		[Increment(1)]
 		public int amountCrudePouch {get; set;}
@@ -158,9 +158,9 @@ namespace Bundles
 		public bool enableSilkPouchRecipeLoom {get; set;}
 		
 		[Label("[i:Bundles/SilkPouch][i:Silk] Silk Pouch Amount")]
-		[Tooltip("How many materials are required to craft this.\n(REQUIRES MOD RELOAD.)\n[Default: 10]")]
+		[Tooltip("How many materials are required to craft this.\n(REQUIRES MOD RELOAD.)\n[Default: 2]")]
 		[Slider]
-		[DefaultValue(10)]
+		[DefaultValue(2)]
 		[Range(1, 100)]
 		[Increment(1)]
 		public int amountSilkPouch {get; set;}
@@ -184,9 +184,9 @@ namespace Bundles
 		public bool enableSilkBundleRecipeLoom {get; set;}
 		
 		[Label("[i:Bundles/SilkBundle][i:Silk] Silk Bundle Amount")]
-		[Tooltip("How many materials are required to craft this.\n(REQUIRES MOD RELOAD.)\n[Default: 15]")]
+		[Tooltip("How many materials are required to craft this.\n(REQUIRES MOD RELOAD.)\n[Default: 4]")]
 		[Slider]
-		[DefaultValue(15)]
+		[DefaultValue(4)]
 		[Range(1, 100)]
 		[Increment(1)]
 		public int amountSilkBundle {get; set;}
@@ -210,9 +210,9 @@ namespace Bundles
 		public bool enableLeatherPouchRecipeLoom {get; set;}
 		
 		[Label("[i:Bundles/LeatherPouch][i:Leather] Leather Pouch Amount")]
-		[Tooltip("How many materials are required to craft this.\n(REQUIRES MOD RELOAD.)\n[Default: 10]")]
+		[Tooltip("How many materials are required to craft this.\n(REQUIRES MOD RELOAD.)\n[Default: 2]")]
 		[Slider]
-		[DefaultValue(10)]
+		[DefaultValue(2)]
 		[Range(1, 100)]
 		[Increment(1)]
 		public int amountLeatherPouch {get; set;}
@@ -236,9 +236,9 @@ namespace Bundles
 		public bool enableLeatherBundleRecipeLoom {get; set;}
 		
 		[Label("[i:Bundles/LeatherBundle][i:Leather] Leather Bundle Amount")]
-		[Tooltip("How many materials are required to craft this.\n(REQUIRES MOD RELOAD.)\n[Default: 15]")]
+		[Tooltip("How many materials are required to craft this.\n(REQUIRES MOD RELOAD.)\n[Default: 4]")]
 		[Slider]
-		[DefaultValue(15)]
+		[DefaultValue(4)]
 		[Range(1, 100)]
 		[Increment(1)]
 		public int amountLeatherBundle {get; set;}
@@ -270,9 +270,9 @@ namespace Bundles
 		public int amountApparelCaseWood {get; set;}
 		
 		[Label("[i:Bundles/ApparelCase][i:Leather] Apparel Case Leather Amount")]
-		[Tooltip("How much Leather is required to craft this.\n(REQUIRES MOD RELOAD.)\n[Default: 1]")]
+		[Tooltip("How much Leather is required to craft this.\n(REQUIRES MOD RELOAD.)\n[Default: 5]")]
 		[Slider]
-		[DefaultValue(1)]
+		[DefaultValue(5)]
 		[Range(1, 100)]
 		[Increment(1)]
 		public int amountApparelCaseLeather {get; set;}
@@ -284,14 +284,14 @@ namespace Bundles
 		public bool enableDoubleScabbardRecipe {get; set;}
 		
 		[Label("[i:Bundles/DoubleScabbard][i:WorkBench] Double Scabbard at WorkBench")]
-		[Tooltip("If true, a nearby WorkBench is require to craft this.\n(REQUIRES MOD RELOAD.)\n[Default: Off]")]
-		[DefaultValue(false)]
+		[Tooltip("If true, a nearby WorkBench is require to craft this.\n(REQUIRES MOD RELOAD.)\n[Default: On]")]
+		[DefaultValue(true)]
 		[ReloadRequired]
 		public bool enableDoubleScabbardRecipeWorkBench {get; set;}
 		
 		[Label("[i:Bundles/DoubleScabbard][i:Loom] Double Scabbard at Loom")]
-		[Tooltip("If true, a nearby Loom is require to craft this.\n(REQUIRES MOD RELOAD.)\n[Default: On]")]
-		[DefaultValue(true)]
+		[Tooltip("If true, a nearby Loom is require to craft this.\n(REQUIRES MOD RELOAD.)\n[Default: Off]")]
+		[DefaultValue(false)]
 		[ReloadRequired]
 		public bool enableDoubleScabbardRecipeLoom {get; set;}
 		
@@ -302,6 +302,5 @@ namespace Bundles
 		[Range(1, 100)]
 		[Increment(1)]
 		public int amountDoubleScabbard {get; set;}
-		
 	}
 }

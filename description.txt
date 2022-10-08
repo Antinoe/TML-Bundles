@@ -95,3 +95,6 @@ This irritable consistency is why I directed the main focus of this project towa
 
 -v0.1.9.2-
 [-] Removed the Iron Bar recipe group from the Apparel Case. It is now only crafted with Wood and Leather.
+
+-v0.1.9.3-
+[=] Adjusted the Config a bit. The Silk and Leather Pouches and Bundles are now more reasonable with their material costs, and all of the bundles (excluding Double Scabbard and Apparel Case) have had their capacity rebalanced.
