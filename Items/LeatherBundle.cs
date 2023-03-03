@@ -15,7 +15,7 @@ namespace Bundles.Items
 {
 	public class LeatherBundle : BaseBundle
 	{
-		override protected int GetMaxCapacity() => BundlesConfig.Instance.capacityLeatherBundle;
+		override protected int maxCapacity() => BundlesConfig.Instance.capacityLeatherBundle;
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Leather Bundle");

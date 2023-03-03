@@ -15,7 +15,7 @@ namespace Bundles.Items
 {
 	public class CrudePouch : BaseBundle
 	{
-		override protected int GetMaxCapacity() => BundlesConfig.Instance.capacityCrudePouch;
+		override protected int maxCapacity() => BundlesConfig.Instance.capacityCrudePouch;
 		
 		public override void SetStaticDefaults()
 		{

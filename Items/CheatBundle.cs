@@ -14,7 +14,7 @@ namespace Bundles.Items
 {
 	public class CheatBundle : BaseBundle
 	{
-		override protected int GetMaxCapacity() => BundlesConfig.Instance.capacityCheatBundle;
+		override protected int maxCapacity() => BundlesConfig.Instance.capacityCheatBundle;
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Cheat Bundle");

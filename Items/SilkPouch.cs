@@ -15,7 +15,7 @@ namespace Bundles.Items
 {
 	public class SilkPouch : BaseBundle
 	{
-		override protected int GetMaxCapacity() => BundlesConfig.Instance.capacitySilkPouch;
+		override protected int maxCapacity() => BundlesConfig.Instance.capacitySilkPouch;
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Silk Pouch");

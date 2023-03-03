@@ -14,7 +14,7 @@ namespace Bundles.Items
 {
 	public class DoubleScabbard : BaseBundle
 	{
-		override protected int GetMaxCapacity() => BundlesConfig.Instance.capacityDoubleScabbard;
+		override protected int maxCapacity() => BundlesConfig.Instance.capacityDoubleScabbard;
 		protected override bool ValidContainedItem(Item item)
 		{
 			return item.maxStack == 1 && item.damage > 0;

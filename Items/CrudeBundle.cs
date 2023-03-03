@@ -15,7 +15,7 @@ namespace Bundles.Items
 {
 	public class CrudeBundle : BaseBundle
 	{
-		override protected int GetMaxCapacity() => BundlesConfig.Instance.capacityCrudeBundle;
+		override protected int maxCapacity() => BundlesConfig.Instance.capacityCrudeBundle;
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Crude Bundle");

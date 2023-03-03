@@ -14,7 +14,7 @@ namespace Bundles.Items
 {
 	public class ApparelCase : BaseBundle
 	{
-		override protected int GetMaxCapacity() => BundlesConfig.Instance.capacityApparelCase;
+		override protected int maxCapacity() => BundlesConfig.Instance.capacityApparelCase;
 		protected override bool ValidContainedItem(Item item)
         {
 			return item.defense > 0 || item.accessory || item.vanity;

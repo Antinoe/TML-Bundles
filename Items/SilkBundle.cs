@@ -15,7 +15,7 @@ namespace Bundles.Items
 {
 	public class SilkBundle : BaseBundle
 	{
-		override protected int GetMaxCapacity() => BundlesConfig.Instance.capacitySilkBundle;
+		override protected int maxCapacity() => BundlesConfig.Instance.capacitySilkBundle;
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Silk Bundle");
