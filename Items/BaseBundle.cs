@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using Terraria;
+using Terraria.Audio;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.ModLoader.IO;
@@ -74,6 +75,7 @@ namespace Bundles.Items
 			
 			if (this.bundleList.Count != 0)
 			{
+				SoundEngine.PlaySound(Sounds.Item.BundleDump, player.position);
 				Item item = Enumerable.Last<Item>(this.bundleList);
 				// @TODO: Probably .Clone() is redundant should be cloned by the spawn function
 				player.QuickSpawnClonedItem(source, item.Clone(), item.stack);
@@ -113,6 +115,7 @@ namespace Bundles.Items
 					{
 						if (this.ValidContainedItem(Main.mouseItem)) // Check if item is valid for this bundle
 						{
+							SoundEngine.PlaySound(Sounds.Item.BundleInsert, player.position);
 							this.bundleList.Add(Main.mouseItem.Clone());
 							Main.mouseItem.TurnToAir();
 							return;
@@ -123,6 +126,7 @@ namespace Bundles.Items
 				{
 					if (this.bundleList.Count != 0) //If the bundle contains an item or more.
 					{
+						SoundEngine.PlaySound(Sounds.Item.BundleExtract, player.position);
 						if (Main.keyState.IsKeyDown(Keys.LeftShift)) //If holding Left Shift.
 						{
 							Item item = Enumerable.First<Item>(this.bundleList);
