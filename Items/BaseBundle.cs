@@ -142,13 +142,13 @@ namespace Bundles.Items
 			SoundEngine.PlaySound(Sounds.Item.BundleExtract, player.position);
 			if (Main.keyState.IsKeyDown(Keys.LeftShift))
 			{
-				Item item = Enumerable.First<Item>(this.bundleList);
+				var item = Enumerable.First<Item>(this.bundleList);
 				Main.mouseItem = item.Clone();
 				this.bundleList.Remove(item);
 			}
 			else
 			{
-				Item item = Enumerable.Last<Item>(this.bundleList);
+				var item = Enumerable.Last<Item>(this.bundleList);
 				Main.mouseItem = item.Clone();
 				this.bundleList.Remove(item);
 			}
