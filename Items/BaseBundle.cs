@@ -71,15 +71,9 @@ namespace Bundles.Items
 		
 		public override bool? UseItem(Player player)
 		{
-			var source = player.GetSource_OpenItem(Type);
-			
 			if (this.bundleList.Count != 0)
 			{
-				SoundEngine.PlaySound(Sounds.Item.BundleDump, player.position);
-				Item item = Enumerable.Last<Item>(this.bundleList);
-				// @TODO: Probably .Clone() is redundant should be cloned by the spawn function
-				player.QuickSpawnClonedItem(source, item.Clone(), item.stack);
-				this.bundleList.Remove(item);
+				BundleDump();
 				return true;
 			}
 			else
@@ -109,39 +103,66 @@ namespace Bundles.Items
 			//This is MUCH more efficient than what was used in the last version.
 			if (player.whoAmI == Main.myPlayer)
 			{
-				if (!Main.mouseItem.IsAir) //If an item is in hand.
+				//	Inserting
+				if (!Main.mouseItem.IsAir)
 				{
 					if (Main.mouseItem.stack <= maxCapacity() - currentCapacity)
 					{
 						if (this.ValidContainedItem(Main.mouseItem)) // Check if item is valid for this bundle
 						{
-							SoundEngine.PlaySound(Sounds.Item.BundleInsert, player.position);
-							this.bundleList.Add(Main.mouseItem.Clone());
-							Main.mouseItem.TurnToAir();
-							return;
+							BundleInsert();
 						}
 					}
 				}
-				else //If nothing is in hand.
+				//	Extracting
+				else
 				{
 					if (this.bundleList.Count != 0) //If the bundle contains an item or more.
 					{
-						SoundEngine.PlaySound(Sounds.Item.BundleExtract, player.position);
-						if (Main.keyState.IsKeyDown(Keys.LeftShift)) //If holding Left Shift.
-						{
-							Item item = Enumerable.First<Item>(this.bundleList);
-							Main.mouseItem = item.Clone();
-							this.bundleList.Remove(item);
-						}
-						else //If not holding Left Shift.
-						{
-							Item item = Enumerable.Last<Item>(this.bundleList);
-							Main.mouseItem = item.Clone();
-							this.bundleList.Remove(item);
-						}
+						BundleExtract();
 					}
 				}
 			}
+		}
+		
+		public void BundleInsert()
+		{
+			var player = Main.LocalPlayer;
+			
+			SoundEngine.PlaySound(Sounds.Item.BundleInsert, player.position);
+			this.bundleList.Add(Main.mouseItem.Clone());
+			Main.mouseItem.TurnToAir();
+		}
+		
+		public void BundleExtract()
+		{
+			var player = Main.LocalPlayer;
+			
+			SoundEngine.PlaySound(Sounds.Item.BundleExtract, player.position);
+			if (Main.keyState.IsKeyDown(Keys.LeftShift)) //If holding Left Shift.
+			{
+				Item item = Enumerable.First<Item>(this.bundleList);
+				Main.mouseItem = item.Clone();
+				this.bundleList.Remove(item);
+			}
+			else //If not holding Left Shift.
+			{
+				Item item = Enumerable.Last<Item>(this.bundleList);
+				Main.mouseItem = item.Clone();
+				this.bundleList.Remove(item);
+			}
+		}
+		
+		public void BundleDump()
+		{
+			var player = Main.LocalPlayer;
+			var source = player.GetSource_OpenItem(Type);
+			
+			SoundEngine.PlaySound(Sounds.Item.BundleDump, player.position);
+			Item item = Enumerable.Last<Item>(this.bundleList);
+			// @TODO: Probably .Clone() is redundant should be cloned by the spawn function
+			player.QuickSpawnClonedItem(source, item.Clone(), item.stack);
+			this.bundleList.Remove(item);
 		}
 		
 		//Start: Code that disallows the "Universal Item List" bug.
