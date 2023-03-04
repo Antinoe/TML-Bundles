@@ -13,6 +13,14 @@ namespace Bundles
 		
 	[Header("General")]
 		
+		[Label("[i:Bundles/PocketCase] Pocket Case Capacity")]
+		[Tooltip("How many items this can hold.\n[Default: 5]")]
+		[Slider]
+		[DefaultValue(5)]
+		[Range(5, 200)]
+		[Increment(5)]
+		public int capacityPocketCase {get; set;}
+		
 		[Label("[i:Bundles/CrudePouch] Crude Pouch Capacity")]
 		[Tooltip("How many items this can hold.\n[Default: 15]")]
 		[Slider]
@@ -86,6 +94,26 @@ namespace Bundles
 		public int capacityCheatBundle {get; set;}
 		
 	[Header("Recipes")]
+		
+		[Label("[i:Bundles/PocketCase] Enable Pocket Case Recipe")]
+		[Tooltip("If false, Players cannot craft this.\n(REQUIRES MOD RELOAD.)\n[Default: On]")]
+		[DefaultValue(true)]
+		[ReloadRequired]
+		public bool enablePocketCaseRecipe {get; set;}
+		
+		[Label("[i:Bundles/PocketCase][i:WorkBench] Pocket Case at WorkBench")]
+		[Tooltip("If true, a nearby WorkBench is require to craft this.\n(REQUIRES MOD RELOAD.)\n[Default: On]")]
+		[DefaultValue(true)]
+		[ReloadRequired]
+		public bool enablePocketCaseRecipeWorkBench {get; set;}
+		
+		[Label("[i:Bundles/PocketCase][i:Wood] Pocket Case Amount")]
+		[Tooltip("How many materials are required to craft this.\n(REQUIRES MOD RELOAD.)\n[Default: 5]")]
+		[Slider]
+		[DefaultValue(5)]
+		[Range(1, 100)]
+		[Increment(1)]
+		public int amountPocketCase {get; set;}
 		
 		[Label("[i:Bundles/CrudePouch] Enable Crude Pouch Recipe")]
 		[Tooltip("If false, Players cannot craft this.\n(REQUIRES MOD RELOAD.)\n[Default: On]")]
