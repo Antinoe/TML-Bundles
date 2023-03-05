@@ -76,23 +76,13 @@ namespace Bundles.Items
 				BundleDump();
 				return true;
 			}
-			else
-			{
-				return false;
-			}
-		}
-		
-		//	Prevents the item from vanishing upon stowing items.
-		public override bool ConsumeItem(Player player)
-		{
 			return false;
 		}
 		
+		//	Prevents the item from vanishing upon stowing items.
+		public override bool ConsumeItem(Player player)	{	return false;	}
 		//	RightClick functions (inserting/extracting) cannot work without this.
-		public override bool CanRightClick()
-		{
-			return true;
-		}
+		public override bool CanRightClick()	{	return true;	}
 		
 		public override void RightClick(Player player)
 		{
