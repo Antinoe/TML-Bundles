@@ -7,7 +7,7 @@ using Terraria.Audio;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.ModLoader.IO;
-using Microsoft.Xna.Framework; //	Text Colors.
+using Microsoft.Xna.Framework; //	Colors, for both Text and Bundle Color.
 using Microsoft.Xna.Framework.Input; //	Allows Left Shift to be detected.
 
 
@@ -15,6 +15,7 @@ namespace Bundles.Items
 {
 	public class BaseBundle : ModItem
 	{
+		protected int colorDelay = 0;
 		//	Properties changed by the other bundles
 		protected virtual int maxCapacity() => 999;
 		virtual protected bool ValidContainedItem(Item item)
@@ -55,7 +56,7 @@ namespace Bundles.Items
 			tooltips.Add(CurrentCapacity);
 			CurrentCapacity.OverrideColor = Color.Cyan; //	Color of the Capacity.
 			
-			TooltipLine ShowControls = new TooltipLine(Mod, "ShowControls", "Right-Click with items in hand to stow them." + "\nRight-Click with an empty hand to withdraw items." + "\nShift-Right-Click to withdraw in reverse order.");
+			TooltipLine ShowControls = new TooltipLine(Mod, "ShowControls", "Right-Click with items in hand to stow them.\nRight-Click with an empty hand to withdraw items.\nShift-Right-Click to withdraw in reverse order.\nPress S while holding Shift to cycle between colors.");
 			ShowControls.OverrideColor = Color.Orange; //	Color of the Controls Preview.
 			
 			if (player.controlUp) //	If holding Up.
@@ -66,6 +67,23 @@ namespace Bundles.Items
 			foreach (Item item in Enumerable.Reverse<Item>(this.bundleList))
 			{
 				tooltips.Add(new TooltipLine(Mod, "ItemInfo", item.HoverName)); //	Displays each item in the Item List.
+			}
+		}
+		public override void UpdateInventory(Player player)
+		{
+			if (!Main.mouseItem.IsAir)
+			{
+				if (colorDelay > 0) {	colorDelay--;	}
+				if (colorDelay <= 0 && player.controlDown && Main.keyState.IsKeyDown(Keys.LeftShift))
+				{
+					colorDelay = 20;
+					if (Main.rand.Next(4) == 0)	{	Main.mouseItem.color = Color.Green;	}
+					if (Main.rand.Next(4) == 0)	{	Main.mouseItem.color = Color.Blue;	}
+					if (Main.rand.Next(4) == 0)	{	Main.mouseItem.color = Color.Purple;	}
+					if (Main.rand.Next(4) == 0)	{	Main.mouseItem.color = Color.Pink;	}
+					if (Main.rand.Next(4) == 0)	{	Main.mouseItem.color = Color.Red;	}
+					if (Main.rand.Next(4) == 0)	{	Main.mouseItem.color = Color.Orange;	}
+				}
 			}
 		}
 		
