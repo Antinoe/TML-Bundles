@@ -97,11 +97,23 @@ namespace Bundles.Items
 				//	Inserting
 				if (!Main.mouseItem.IsAir)
 				{
-					if (Main.mouseItem.stack <= maxCapacity() - currentCapacity)
+					if (this.ValidContainedItem(Main.mouseItem)) //	Check if item is valid for this bundle
 					{
-						if (this.ValidContainedItem(Main.mouseItem)) // Check if item is valid for this bundle
+						if (BundlesConfig.Instance.insertionMethod)
 						{
-							BundleInsert();
+							//	New, much more lenient formula for item insertion.
+							if (currentCapacity <= maxCapacity() && Main.mouseItem.stack <= maxCapacity())
+							{
+								BundleInsert();
+							}
+						}
+						else
+						{
+							//	Old formula for item insertion.
+							if (Main.mouseItem.stack <= maxCapacity() - currentCapacity)
+							{
+								BundleInsert();
+							}
 						}
 					}
 				}
