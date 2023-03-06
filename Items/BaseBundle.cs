@@ -78,11 +78,18 @@ namespace Bundles.Items
 				if (colorDelay <= 0 && player.controlDown && Main.keyState.IsKeyDown(Keys.LeftShift))
 				{
 					colorDelay = 30;
+					if (Main.rand.Next(4) == 0)	{	Main.mouseItem.color = Color.DarkGreen;	}
 					if (Main.rand.Next(4) == 0)	{	Main.mouseItem.color = Color.Green;	}
+					if (Main.rand.Next(4) == 0)	{	Main.mouseItem.color = Color.LightGreen;	}
+					if (Main.rand.Next(4) == 0)	{	Main.mouseItem.color = Color.DarkBlue;	}
 					if (Main.rand.Next(4) == 0)	{	Main.mouseItem.color = Color.Blue;	}
+					if (Main.rand.Next(4) == 0)	{	Main.mouseItem.color = Color.LightBlue;	}
 					if (Main.rand.Next(4) == 0)	{	Main.mouseItem.color = Color.Purple;	}
 					if (Main.rand.Next(4) == 0)	{	Main.mouseItem.color = Color.Pink;	}
+					if (Main.rand.Next(4) == 0)	{	Main.mouseItem.color = Color.LightPink;	}
+					if (Main.rand.Next(4) == 0)	{	Main.mouseItem.color = Color.DarkRed;	}
 					if (Main.rand.Next(4) == 0)	{	Main.mouseItem.color = Color.Red;	}
+					if (Main.rand.Next(4) == 0)	{	Main.mouseItem.color = Color.DarkOrange;	}
 					if (Main.rand.Next(4) == 0)	{	Main.mouseItem.color = Color.Orange;	}
 				}
 			}
