@@ -16,6 +16,7 @@ namespace Bundles.Items
 	public class BaseBundle : ModItem
 	{
 		protected int colorDelay = 0;
+		protected bool isBundle = true;
 		//	Properties changed by the other bundles
 		protected virtual int maxCapacity() => 999;
 		virtual protected bool ValidContainedItem(Item item)
@@ -71,12 +72,12 @@ namespace Bundles.Items
 		}
 		public override void UpdateInventory(Player player)
 		{
-			if (!Main.mouseItem.IsAir)
+			if (!Main.mouseItem.IsAir && Main.mouseItem.ModItem is BaseBundle)
 			{
 				if (colorDelay > 0) {	colorDelay--;	}
 				if (colorDelay <= 0 && player.controlDown && Main.keyState.IsKeyDown(Keys.LeftShift))
 				{
-					colorDelay = 20;
+					colorDelay = 30;
 					if (Main.rand.Next(4) == 0)	{	Main.mouseItem.color = Color.Green;	}
 					if (Main.rand.Next(4) == 0)	{	Main.mouseItem.color = Color.Blue;	}
 					if (Main.rand.Next(4) == 0)	{	Main.mouseItem.color = Color.Purple;	}
