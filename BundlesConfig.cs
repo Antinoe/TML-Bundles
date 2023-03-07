@@ -108,8 +108,8 @@ namespace Bundles
 		public bool enablePocketCaseRecipe {get; set;}
 		
 		[Label("[i:Bundles/PocketCase][i:WorkBench] Pocket Case at WorkBench")]
-		[Tooltip("If true, a nearby WorkBench is require to craft this.\n(REQUIRES MOD RELOAD.)\n[Default: On]")]
-		[DefaultValue(true)]
+		[Tooltip("If true, a nearby WorkBench is require to craft this.\n(REQUIRES MOD RELOAD.)\n[Default: Off]")]
+		[DefaultValue(false)]
 		[ReloadRequired]
 		public bool enablePocketCaseRecipeWorkBench {get; set;}
 		
