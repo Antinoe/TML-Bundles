@@ -77,7 +77,25 @@ namespace Bundles.Items
 				if (colorDelay > 0) {	colorDelay--;	}
 				if (colorDelay <= 0 && player.controlDown && Main.keyState.IsKeyDown(Keys.LeftShift))
 				{
-					colorDelay = 30;
+					colorDelay = 15;
+					switch (Main.rand.Next(14))
+					{
+						case 1:	Main.mouseItem.color = Color.DarkGreen;	break;
+						case 2:	Main.mouseItem.color = Color.Green;	break;
+						case 3:	Main.mouseItem.color = Color.LightGreen;	break;
+						case 4:	Main.mouseItem.color = Color.DarkBlue;	break;
+						case 5:	Main.mouseItem.color = Color.Blue;	break;
+						case 6:	Main.mouseItem.color = Color.LightBlue;	break;
+						case 7:	Main.mouseItem.color = Color.Purple;	break;
+						case 8:	Main.mouseItem.color = Color.Pink;	break;
+						case 9:	Main.mouseItem.color = Color.LightPink;	break;
+						case 10:	Main.mouseItem.color = Color.DarkRed;	break;
+						case 11:	Main.mouseItem.color = Color.Red;	break;
+						case 12:	Main.mouseItem.color = Color.DarkOrange;	break;
+						case 13:	Main.mouseItem.color = Color.Orange;	break;
+					}
+					//	Old chance-based system..
+					/*
 					if (Main.rand.Next(4) == 0)	{	Main.mouseItem.color = Color.DarkGreen;	}
 					if (Main.rand.Next(4) == 0)	{	Main.mouseItem.color = Color.Green;	}
 					if (Main.rand.Next(4) == 0)	{	Main.mouseItem.color = Color.LightGreen;	}
@@ -91,6 +109,7 @@ namespace Bundles.Items
 					if (Main.rand.Next(4) == 0)	{	Main.mouseItem.color = Color.Red;	}
 					if (Main.rand.Next(4) == 0)	{	Main.mouseItem.color = Color.DarkOrange;	}
 					if (Main.rand.Next(4) == 0)	{	Main.mouseItem.color = Color.Orange;	}
+					*/
 				}
 			}
 		}
