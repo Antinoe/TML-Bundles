@@ -13,15 +13,11 @@ namespace Bundles
 		
 	[Header("General")]
 		
-		[Label("[i:Daybloom][i:Bundles/LeatherBundle] New Item Stowing Formula")]
-		[Tooltip("If true, it will be possible to go over the Max Capacity of bundles\nas long as the Item Stack is less than or equal to the Max Capacity of the bundle.\nOtherwise, the old formula applies.\n[Default: On]")]
-		[DefaultValue(true)]
-		//[ReloadRequired]
-		public bool insertionMethod {get; set;}
-		
 		[Label("[i:Cog] Debug Info")]
 		[DefaultValue(false)]
 		public bool enableDebugInfo {get; set;}
+		
+	[Header("Capacity")]
 		
 		[Label("[i:Bundles/PocketCase] Pocket Case Capacity")]
 		[Tooltip("How many items this can hold.\n[Default: 5]")]

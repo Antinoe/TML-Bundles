@@ -145,34 +145,17 @@ namespace Bundles.Items
 				{
 					if (this.ValidContainedItem(Main.mouseItem)) //	Check if item is valid for this bundle
 					{
-						//	New, much more lenient formula for item insertion.
-						if (BundlesConfig.Instance.insertionMethod)
+						//	If Item Stack is less than or equal to Spare Capacity.
+						if (Main.mouseItem.stack <= spareCapacity)
 						{
-							//	If Current Capacity is less than or equal to Max Capacity, and Item Stack is less than or equal to Max Capacity.
-							if (currentCapacity <= maxCapacity() && Main.mouseItem.stack <= maxCapacity())
-							{
-								//	If Item Stack is less than or equal to Spare Capacity.
-								if (Main.mouseItem.stack <= spareCapacity)
-								{
-									BundleInsert();
-								}
-								//	Disabling this for now until I get it working correctly.
-								//	If Item Stack is greater than Spare Capacity.
-								/*if (Main.mouseItem.stack > spareCapacity)
-								{
-									BundleInsertPartial();
-								}*/
-							}
+							BundleInsert();
 						}
-						//	Old formula for item insertion.
-						else
+						//	Disabling this for now until I get it working correctly.
+						//	If Item Stack is greater than Spare Capacity.
+						/*if (Main.mouseItem.stack > spareCapacity)
 						{
-							//	If Item Stack is less than or equal to Spare Capacity.
-							if (Main.mouseItem.stack <= spareCapacity)
-							{
-								BundleInsert();
-							}
-						}
+							BundleInsertPartial();
+						}*/
 					}
 				}
 				//	Extracting
