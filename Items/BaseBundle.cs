@@ -136,6 +136,7 @@ namespace Bundles.Items
 			{
 				currentCapacity += Item.stack;
 			}
+			var spareCapacity = maxCapacity() - currentCapacity;
 			
 			if (player.whoAmI == Main.myPlayer)
 			{
@@ -147,36 +148,27 @@ namespace Bundles.Items
 						//	New, much more lenient formula for item insertion.
 						if (BundlesConfig.Instance.insertionMethod)
 						{
-							//	If Current Capacity is less than or equal to Max Capacity, and Mouse Item Stack is less than or equal to Max Capacity, insert stack.
-							/*if (currentCapacity <= maxCapacity() && Main.mouseItem.stack <= maxCapacity())
-							{
-								BundleInsert();
-							}
-							//	If Mouse Item Stack is greater than Remaining Capacity (Max Capacity minus Current Capacity), and Current Capacity is less than or equal to Max Capacity, and Mouse Item Stack is less than or equal to Max Capacity, insert stack.
-							if (Main.mouseItem.stack > (maxCapacity() - currentCapacity) && currentCapacity <= maxCapacity() && Main.mouseItem.stack <= maxCapacity())
-							{
-								BundleInsertPartial();
-							}*/
-
-							//	If Current Capacity is less than or equal to Max Capacity.
+							//	If Current Capacity is less than or equal to Max Capacity, and Item Stack is less than or equal to Max Capacity.
 							if (currentCapacity <= maxCapacity() && Main.mouseItem.stack <= maxCapacity())
 							{
-								//	If Item Stack is less than or equal to Remaining Capacity. (Max Capacity - Current Capacity)
-								if (Main.mouseItem.stack <= (maxCapacity() - currentCapacity))
+								//	If Item Stack is less than or equal to Spare Capacity.
+								if (Main.mouseItem.stack <= spareCapacity)
 								{
 									BundleInsert();
 								}
-								//	If Item Stack is greater than Remaining Capacity. (Max Capacity - Current Capacity)
-								if (Main.mouseItem.stack > (maxCapacity() - currentCapacity))
+								//	Disabling this for now until I get it working correctly.
+								//	If Item Stack is greater than Spare Capacity.
+								/*if (Main.mouseItem.stack > spareCapacity)
 								{
 									BundleInsertPartial();
-								}
+								}*/
 							}
 						}
 						//	Old formula for item insertion.
 						else
 						{
-							if (Main.mouseItem.stack <= maxCapacity() - currentCapacity)
+							//	If Item Stack is less than or equal to Spare Capacity.
+							if (Main.mouseItem.stack <= spareCapacity)
 							{
 								BundleInsert();
 							}
@@ -210,14 +202,31 @@ namespace Bundles.Items
 		public void BundleInsertPartial()
 		{
 			var player = Main.LocalPlayer;
+			//var item = Main.mouseItem;
+			int currentCapacity = 0;
+			foreach (var Item in this.bundleList)	{	currentCapacity += Item.stack;	}
+			var spareCapacity = maxCapacity() - currentCapacity;
+			var insertedStack = spareCapacity;
+			var spareStack = Main.mouseItem.stack - insertedStack;
 			
 			if (BundlesConfig.Instance.enableDebugInfo)
 			{
 				Main.NewText("BundleInsertPartial");
 			}
+			//	Forgot what this logic does, but it seems destructive, so I'll worry about it later.
+			/*if (Main.mouseItem.stack > spareCapacity)
+			{
+				insertedStack = spareCapacity;
+			}
+			else
+			{
+				Main.mouseItem.TurnToAir();
+			}*/
+			currentCapacity += insertedStack;
+			Main.mouseItem.stack = spareStack;
 			SoundEngine.PlaySound(Sounds.Item.BundleInsert, player.position);
 			this.bundleList.Add(Main.mouseItem.Clone());
-			Main.mouseItem.TurnToAir();
+			//Main.mouseItem.TurnToAir();
 		}
 		
 		public void BundleExtract()
