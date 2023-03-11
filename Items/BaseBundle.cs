@@ -144,11 +144,11 @@ namespace Bundles.Items
 				{
 					if (this.ValidContainedItem(Main.mouseItem)) //	Check if item is valid for this bundle
 					{
+						//	New, much more lenient formula for item insertion.
 						if (BundlesConfig.Instance.insertionMethod)
 						{
-							//	New, much more lenient formula for item insertion.
 							//	If Current Capacity is less than or equal to Max Capacity, and Mouse Item Stack is less than or equal to Max Capacity, insert stack.
-							if (currentCapacity <= maxCapacity() && Main.mouseItem.stack <= maxCapacity())
+							/*if (currentCapacity <= maxCapacity() && Main.mouseItem.stack <= maxCapacity())
 							{
 								BundleInsert();
 							}
@@ -156,11 +156,26 @@ namespace Bundles.Items
 							if (Main.mouseItem.stack > (maxCapacity() - currentCapacity) && currentCapacity <= maxCapacity() && Main.mouseItem.stack <= maxCapacity())
 							{
 								BundleInsertPartial();
+							}*/
+
+							//	If Current Capacity is less than or equal to Max Capacity.
+							if (currentCapacity <= maxCapacity() && Main.mouseItem.stack <= maxCapacity())
+							{
+								//	If Item Stack is less than or equal to Remaining Capacity. (Max Capacity - Current Capacity)
+								if (Main.mouseItem.stack <= (maxCapacity() - currentCapacity))
+								{
+									BundleInsert();
+								}
+								//	If Item Stack is greater than Remaining Capacity. (Max Capacity - Current Capacity)
+								if (Main.mouseItem.stack > (maxCapacity() - currentCapacity))
+								{
+									BundleInsertPartial();
+								}
 							}
 						}
+						//	Old formula for item insertion.
 						else
 						{
-							//	Old formula for item insertion.
 							if (Main.mouseItem.stack <= maxCapacity() - currentCapacity)
 							{
 								BundleInsert();
