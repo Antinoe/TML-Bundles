@@ -19,6 +19,10 @@ namespace Bundles
 		//[ReloadRequired]
 		public bool insertionMethod {get; set;}
 		
+		[Label("[i:Cog] Debug Info")]
+		[DefaultValue(false)]
+		public bool enableDebugInfo {get; set;}
+		
 		[Label("[i:Bundles/PocketCase] Pocket Case Capacity")]
 		[Tooltip("How many items this can hold.\n[Default: 5]")]
 		[Slider]

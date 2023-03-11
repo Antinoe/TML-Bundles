@@ -147,9 +147,15 @@ namespace Bundles.Items
 						if (BundlesConfig.Instance.insertionMethod)
 						{
 							//	New, much more lenient formula for item insertion.
+							//	If Current Capacity is less than or equal to Max Capacity, and Mouse Item Stack is less than or equal to Max Capacity, insert stack.
 							if (currentCapacity <= maxCapacity() && Main.mouseItem.stack <= maxCapacity())
 							{
 								BundleInsert();
+							}
+							//	If Mouse Item Stack is greater than Remaining Capacity (Max Capacity minus Current Capacity), and Current Capacity is less than or equal to Max Capacity, and Mouse Item Stack is less than or equal to Max Capacity, insert stack.
+							if (Main.mouseItem.stack > (maxCapacity() - currentCapacity) && currentCapacity <= maxCapacity() && Main.mouseItem.stack <= maxCapacity())
+							{
+								BundleInsertPartial();
 							}
 						}
 						else
@@ -177,6 +183,23 @@ namespace Bundles.Items
 		{
 			var player = Main.LocalPlayer;
 			
+			if (BundlesConfig.Instance.enableDebugInfo)
+			{
+				Main.NewText("BundleInsert");
+			}
+			SoundEngine.PlaySound(Sounds.Item.BundleInsert, player.position);
+			this.bundleList.Add(Main.mouseItem.Clone());
+			Main.mouseItem.TurnToAir();
+		}
+
+		public void BundleInsertPartial()
+		{
+			var player = Main.LocalPlayer;
+			
+			if (BundlesConfig.Instance.enableDebugInfo)
+			{
+				Main.NewText("BundleInsertPartial");
+			}
 			SoundEngine.PlaySound(Sounds.Item.BundleInsert, player.position);
 			this.bundleList.Add(Main.mouseItem.Clone());
 			Main.mouseItem.TurnToAir();
@@ -186,6 +209,10 @@ namespace Bundles.Items
 		{
 			var player = Main.LocalPlayer;
 			
+			if (BundlesConfig.Instance.enableDebugInfo)
+			{
+				Main.NewText("BundleExtract");
+			}
 			SoundEngine.PlaySound(Sounds.Item.BundleExtract, player.position);
 			if (Main.keyState.IsKeyDown(Keys.LeftShift))
 			{
@@ -206,6 +233,10 @@ namespace Bundles.Items
 			var player = Main.LocalPlayer;
 			var source = player.GetSource_OpenItem(Type);
 			
+			if (BundlesConfig.Instance.enableDebugInfo)
+			{
+				Main.NewText("BundleDump");
+			}
 			SoundEngine.PlaySound(Sounds.Item.BundleDump, player.position);
 			Item item = Enumerable.Last<Item>(this.bundleList);
 			//	@TODO: Probably .Clone() is redundant should be cloned by the spawn function
