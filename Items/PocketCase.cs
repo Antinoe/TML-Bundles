@@ -20,6 +20,12 @@ namespace Bundles.Items
 		{
 			DisplayName.SetDefault("Pocket Case");
 		}
+		public override string Texture => "Bundles/Items/PocketCase";
+		public override void SetDefaults()
+		{
+			Item.color = Color.BurlyWood;
+			base.SetDefaults();
+		}
 		
 		public override void AddRecipes()
 		{

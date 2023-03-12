@@ -20,6 +20,12 @@ namespace Bundles.Items
 		{
 			DisplayName.SetDefault("Silk Pouch");
 		}
+		public override string Texture => "Bundles/Items/Pouch";
+		public override void SetDefaults()
+		{
+			Item.color = Color.SteelBlue;
+			base.SetDefaults();
+		}
 		
 		public override void AddRecipes()
 		{

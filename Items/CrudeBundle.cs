@@ -20,6 +20,11 @@ namespace Bundles.Items
 		{
 			DisplayName.SetDefault("Crude Bundle");
 		}
+		public override void SetDefaults()
+		{
+			Item.color = Color.GhostWhite;
+			base.SetDefaults();
+		}
 
 		public override void AddRecipes()
 		{

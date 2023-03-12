@@ -19,5 +19,10 @@ namespace Bundles.Items
 		{
 			DisplayName.SetDefault("Cheat Bundle");
 		}
+		public override void SetDefaults()
+		{
+			Item.color = Color.Magenta;
+			base.SetDefaults();
+		}
 	}
 }
