@@ -25,6 +25,12 @@ namespace Bundles.Items
 			DisplayName.SetDefault("Double Scabbard");
 			Tooltip.SetDefault("Capable of holding tools and weapons.");
 		}
+		public override string Texture => "Bundles/Items/DoubleScabbard";
+		public override void SetDefaults()
+		{
+			Item.color = Color.Peru;
+			base.SetDefaults();
+		}
 		
 		public override void AddRecipes()
 		{

@@ -30,11 +30,11 @@ namespace Bundles.Items
 		{
 			DisplayName.SetDefault("Base Bundle");
 		}
+		public override string Texture => "Bundles/Items/Bundle";
 		
 		public override void SetDefaults()
 		{
 			Item.maxStack = 1;
-			Item.consumable = false;
 			Item.useStyle = ItemUseStyleID.Swing;
 			Item.rare = ItemRarityID.Blue;
 			Item.useTime = 10;
@@ -43,6 +43,21 @@ namespace Bundles.Items
 			Item.width = 20;
 			Item.height = 20;
 		}
+		
+		public override bool? UseItem(Player player)
+		{
+			if (this.bundleList.Count != 0)
+			{
+				BundleDump();
+				return true;
+			}
+			return false;
+		}
+		
+		//	Prevents the item from vanishing upon stowing items.
+		public override bool ConsumeItem(Player player)	{	return false;	}
+		//	RightClick functions (inserting/extracting) cannot work without this.
+		public override bool CanRightClick()	{	return true;	}
 		
 		public override void ModifyTooltips(List<TooltipLine> tooltips)
 		{
@@ -80,19 +95,12 @@ namespace Bundles.Items
 					colorDelay = 15;
 					switch (Main.rand.Next(14))
 					{
-						case 1:	Main.mouseItem.color = Color.DarkGreen;	break;
-						case 2:	Main.mouseItem.color = Color.Green;	break;
-						case 3:	Main.mouseItem.color = Color.LightGreen;	break;
-						case 4:	Main.mouseItem.color = Color.DarkBlue;	break;
-						case 5:	Main.mouseItem.color = Color.Blue;	break;
-						case 6:	Main.mouseItem.color = Color.LightBlue;	break;
-						case 7:	Main.mouseItem.color = Color.Purple;	break;
-						case 8:	Main.mouseItem.color = Color.Pink;	break;
-						case 9:	Main.mouseItem.color = Color.LightPink;	break;
-						case 10:	Main.mouseItem.color = Color.DarkRed;	break;
-						case 11:	Main.mouseItem.color = Color.Red;	break;
-						case 12:	Main.mouseItem.color = Color.DarkOrange;	break;
-						case 13:	Main.mouseItem.color = Color.Orange;	break;
+						case 1:	Main.mouseItem.color = Color.DarkOliveGreen;	break;
+						case 2:	Main.mouseItem.color = Color.CornflowerBlue;	break;
+						case 3:	Main.mouseItem.color = Color.DarkViolet;	break;
+						case 4:	Main.mouseItem.color = Color.Firebrick;	break;
+						case 5:	Main.mouseItem.color = Color.DarkOrange;	break;
+						case 6:	Main.mouseItem.color = Color.Gold;	break;
 					}
 					//	Old chance-based system..
 					/*
@@ -113,21 +121,6 @@ namespace Bundles.Items
 				}
 			}
 		}
-		
-		public override bool? UseItem(Player player)
-		{
-			if (this.bundleList.Count != 0)
-			{
-				BundleDump();
-				return true;
-			}
-			return false;
-		}
-		
-		//	Prevents the item from vanishing upon stowing items.
-		public override bool ConsumeItem(Player player)	{	return false;	}
-		//	RightClick functions (inserting/extracting) cannot work without this.
-		public override bool CanRightClick()	{	return true;	}
 		
 		public override void RightClick(Player player)
 		{

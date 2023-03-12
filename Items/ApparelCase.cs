@@ -25,6 +25,12 @@ namespace Bundles.Items
 			DisplayName.SetDefault("Apparel Case");
 			Tooltip.SetDefault("Capable of holding clothing, accessories and armor.");
 		}
+		public override string Texture => "Bundles/Items/ApparelCase";
+		public override void SetDefaults()
+		{
+			Item.color = Color.BurlyWood;
+			base.SetDefaults();
+		}
 		
 		public override void AddRecipes()
 		{

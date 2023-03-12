@@ -21,6 +21,12 @@ namespace Bundles.Items
 		{
 			DisplayName.SetDefault("Crude Pouch");
 		}
+		public override string Texture => "Bundles/Items/Pouch";
+		public override void SetDefaults()
+		{
+			Item.color = Color.GhostWhite;
+			base.SetDefaults();
+		}
 
 		public override void AddRecipes()
 		{

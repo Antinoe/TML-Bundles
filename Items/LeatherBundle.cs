@@ -20,6 +20,11 @@ namespace Bundles.Items
 		{
 			DisplayName.SetDefault("Leather Bundle");
 		}
+		public override void SetDefaults()
+		{
+			Item.color = Color.Sienna;
+			base.SetDefaults();
+		}
 		
 		public override void AddRecipes()
 		{

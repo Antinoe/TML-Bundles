@@ -20,6 +20,11 @@ namespace Bundles.Items
 		{
 			DisplayName.SetDefault("Silk Bundle");
 		}
+		public override void SetDefaults()
+		{
+			Item.color = Color.SteelBlue;
+			base.SetDefaults();
+		}
 		
 		public override void AddRecipes()
 		{
