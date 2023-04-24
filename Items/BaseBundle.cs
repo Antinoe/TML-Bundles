@@ -93,7 +93,7 @@ namespace Bundles.Items
 				if (colorDelay <= 0 && player.controlDown && Main.keyState.IsKeyDown(Keys.LeftShift))
 				{
 					colorDelay = 15;
-					switch (Main.rand.Next(14))
+					switch (Main.rand.Next(5))
 					{
 						case 1:	Main.mouseItem.color = Color.DarkOliveGreen;	break;
 						case 2:	Main.mouseItem.color = Color.CornflowerBlue;	break;
