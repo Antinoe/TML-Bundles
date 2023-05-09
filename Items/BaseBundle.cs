@@ -5,6 +5,7 @@ using System.Linq;
 using Terraria;
 using Terraria.Audio;
 using Terraria.ID;
+using Terraria.DataStructures;
 using Terraria.ModLoader;
 using Terraria.ModLoader.IO;
 using Microsoft.Xna.Framework; //	Colors, for both Text and Bundle Color.
@@ -26,10 +27,6 @@ namespace Bundles.Items
 
 		private List<Item> bundleList = new List<Item>();
 		
-		public override void SetStaticDefaults()
-		{
-			DisplayName.SetDefault("Base Bundle");
-		}
 		public override string Texture => "Bundles/Items/Bundle";
 		
 		public override void SetDefaults()
@@ -245,7 +242,7 @@ namespace Bundles.Items
 		}
 		
 		//	Start: Code that disallows the "Universal Item List" bug.
-		public override void OnCreate(ItemCreationContext context)
+		public override void OnCreated(ItemCreationContext context)
         {
 			bundleList = new List<Item>();
         }

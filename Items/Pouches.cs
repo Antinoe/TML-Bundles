@@ -15,11 +15,6 @@ namespace Bundles.Items
 	public class CrudePouch : BaseBundle
 	{
 		override protected int maxCapacity() => BundlesConfig.Instance.capacityCrudePouch;
-		
-		public override void SetStaticDefaults()
-		{
-			DisplayName.SetDefault("Crude Pouch");
-		}
 		public override string Texture => "Bundles/Items/Pouch";
 		public override void SetDefaults()
 		{
@@ -48,10 +43,6 @@ namespace Bundles.Items
 	public class SilkPouch : BaseBundle
 	{
 		override protected int maxCapacity() => BundlesConfig.Instance.capacitySilkPouch;
-		public override void SetStaticDefaults()
-		{
-			DisplayName.SetDefault("Silk Pouch");
-		}
 		public override string Texture => "Bundles/Items/Pouch";
 		public override void SetDefaults()
 		{
@@ -80,10 +71,6 @@ namespace Bundles.Items
 	public class LeatherPouch : BaseBundle
 	{
 		override protected int maxCapacity() => BundlesConfig.Instance.capacityLeatherPouch;
-		public override void SetStaticDefaults()
-		{
-			DisplayName.SetDefault("Leather Pouch");
-		}
 		public override string Texture => "Bundles/Items/Pouch";
 		public override void SetDefaults()
 		{

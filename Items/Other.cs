@@ -15,10 +15,6 @@ namespace Bundles.Items
 	public class PocketCase : BaseBundle
 	{
 		override protected int maxCapacity() => BundlesConfig.Instance.capacityPocketCase;
-		public override void SetStaticDefaults()
-		{
-			DisplayName.SetDefault("Pocket Case");
-		}
 		public override string Texture => "Bundles/Items/PocketCase";
 		public override void SetDefaults()
 		{
@@ -48,11 +44,6 @@ namespace Bundles.Items
 			return item.defense > 0 || item.accessory || item.vanity;
 		}
 
-		public override void SetStaticDefaults()
-		{
-			DisplayName.SetDefault("Apparel Case");
-			Tooltip.SetDefault("Capable of holding clothing, accessories and armor.");
-		}
 		public override string Texture => "Bundles/Items/ApparelCase";
 		public override void SetDefaults()
 		{
@@ -87,11 +78,6 @@ namespace Bundles.Items
 			return item.maxStack == 1 && item.damage > 0;
 		}
 
-		public override void SetStaticDefaults()
-		{
-			DisplayName.SetDefault("Double Scabbard");
-			Tooltip.SetDefault("Capable of holding tools and weapons.");
-		}
 		public override string Texture => "Bundles/Items/DoubleScabbard";
 		public override void SetDefaults()
 		{
@@ -120,10 +106,6 @@ namespace Bundles.Items
 	public class CheatBundle : BaseBundle
 	{
 		override protected int maxCapacity() => BundlesConfig.Instance.capacityCheatBundle;
-		public override void SetStaticDefaults()
-		{
-			DisplayName.SetDefault("Cheat Bundle");
-		}
 		public override void SetDefaults()
 		{
 			Item.color = Color.Magenta;

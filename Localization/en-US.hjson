@@ -1,0 +1,60 @@
+Mods: {
+	Bundles: {
+		Items: {
+			CrudePouch: {
+				DisplayName: Crude Pouch
+				Tooltip: ""
+			}
+
+			CrudeBundle: {
+				DisplayName: Crude Bundle
+				Tooltip: ""
+			}
+
+			SilkPouch: {
+				DisplayName: Silk Pouch
+				Tooltip: ""
+			}
+
+			SilkBundle: {
+				DisplayName: Silk Bundle
+				Tooltip: ""
+			}
+
+			LeatherPouch: {
+				DisplayName: Leather Pouch
+				Tooltip: ""
+			}
+
+			LeatherBundle: {
+				DisplayName: Leather Bundle
+				Tooltip: ""
+			}
+
+			PocketCase: {
+				DisplayName: Pocket Case
+				Tooltip: ""
+			}
+
+			ApparelCase: {
+				DisplayName: Apparel Case
+				Tooltip: Capable of storing Clothing, Accessories and Armor
+			}
+
+			DoubleScabbard: {
+				DisplayName: Double Scabbard
+				Tooltip: Capable of storing Tools and Weapons
+			}
+
+			BaseBundle: {
+				DisplayName: Base Bundle
+				Tooltip: ""
+			}
+
+			CheatBundle: {
+				DisplayName: Cheat Bundle
+				Tooltip: ""
+			}
+		}
+	}
+}
