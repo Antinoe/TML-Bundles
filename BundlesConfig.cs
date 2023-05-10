@@ -20,73 +20,73 @@ namespace Bundles
 	[Header("Capacity")]
 		
 		[Label("[i:Bundles/PocketCase] Pocket Case Capacity")]
-		[Tooltip("How many items this can hold.\n[Default: 5]")]
+		[Tooltip("How many items this can hold.\n[Default: 10]")]
 		[Slider]
-		[DefaultValue(5)]
+		[DefaultValue(10)]
 		[Range(5, 200)]
 		[Increment(5)]
 		public int capacityPocketCase {get; set;}
 		
 		[Label("[i:Bundles/CrudePouch] Crude Pouch Capacity")]
-		[Tooltip("How many items this can hold.\n[Default: 15]")]
+		[Tooltip("How many items this can hold.\n[Default: 30]")]
 		[Slider]
-		[DefaultValue(15)]
+		[DefaultValue(30)]
 		[Range(5, 200)]
 		[Increment(5)]
 		public int capacityCrudePouch {get; set;}
 		
 		[Label("[i:Bundles/CrudeBundle] Crude Bundle Capacity")]
-		[Tooltip("How many items this can hold.\n[Default: 45]")]
+		[Tooltip("How many items this can hold.\n[Default: 90]")]
 		[Slider]
-		[DefaultValue(45)]
+		[DefaultValue(90)]
 		[Range(5, 200)]
 		[Increment(5)]
 		public int capacityCrudeBundle {get; set;}
 		
 		[Label("[i:Bundles/SilkPouch] Silk Pouch Capacity")]
-		[Tooltip("How many items this can hold.\n[Default: 35]")]
+		[Tooltip("How many items this can hold.\n[Default: 70]")]
 		[Slider]
-		[DefaultValue(35)]
+		[DefaultValue(70)]
 		[Range(5, 200)]
 		[Increment(5)]
 		public int capacitySilkPouch {get; set;}
 		
 		[Label("[i:Bundles/SilkBundle] Silk Bundle Capacity")]
-		[Tooltip("How many items this can hold.\n[Default: 75]")]
+		[Tooltip("How many items this can hold.\n[Default: 150]")]
 		[Slider]
-		[DefaultValue(75)]
+		[DefaultValue(150)]
 		[Range(5, 200)]
 		[Increment(5)]
 		public int capacitySilkBundle {get; set;}
 		
 		[Label("[i:Bundles/LeatherPouch] Leather Pouch Capacity")]
-		[Tooltip("How many items this can hold.\n[Default: 50]")]
+		[Tooltip("How many items this can hold.\n[Default: 100]")]
 		[Slider]
-		[DefaultValue(50)]
+		[DefaultValue(100)]
 		[Range(5, 200)]
 		[Increment(5)]
 		public int capacityLeatherPouch {get; set;}
 
 		[Label("[i:Bundles/LeatherBundle] Leather Bundle Capacity")]
-		[Tooltip("How many items this can hold.\n[Default: 110]")]
+		[Tooltip("How many items this can hold.\n[Default: 220]")]
 		[Slider]
-		[DefaultValue(110)]
+		[DefaultValue(220)]
 		[Range(5, 200)]
 		[Increment(5)]
 		public int capacityLeatherBundle { get; set; }
 		
 		[Label("[i:Bundles/ApparelCase] Apparel Case Capacity")]
-		[Tooltip("How many items this can hold.\n[Default: 5]")]
+		[Tooltip("How many items this can hold.\n[Default: 10]")]
 		[Slider]
-		[DefaultValue(5)]
+		[DefaultValue(10)]
 		[Range(1, 20)]
 		[Increment(1)]
 		public int capacityApparelCase {get; set;}
 		
 		[Label("[i:Bundles/DoubleScabbard] Double Scabbard Capacity")]
-		[Tooltip("How many items this can hold.\n[Default: 3]")]
+		[Tooltip("How many items this can hold.\n[Default: 6]")]
 		[Slider]
-		[DefaultValue(3)]
+		[DefaultValue(6)]
 		[Range(1, 20)]
 		[Increment(1)]
 		public int capacityDoubleScabbard {get; set;}
