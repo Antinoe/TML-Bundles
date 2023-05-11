@@ -237,7 +237,8 @@ namespace Bundles.Items
 			SoundEngine.PlaySound(Sounds.Item.BundleDump, player.position);
 			Item item = Enumerable.Last<Item>(this.bundleList);
 			//	@TODO: Probably .Clone() is redundant should be cloned by the spawn function
-			player.QuickSpawnClonedItem(source, item.Clone(), item.stack);
+			//player.QuickSpawnClonedItem(source, item.Clone(), item.stack);
+			player.QuickSpawnItem(source, item.Clone(), item.stack);
 			this.bundleList.Remove(item);
 		}
 		
