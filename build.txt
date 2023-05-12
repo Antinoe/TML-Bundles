@@ -1,7 +1,7 @@
 displayName = Bundles - Simple Portable Storage
 author = Antinous, DarioDaF and Logar
 version = 1.0
-homepage = https://github.com/Antinoe/Bundles
+homepage = https://github.com/Antinoe/TML-Bundles
 hideCode = false
 hideResources = false
 includeSource = true
