@@ -265,6 +265,10 @@ namespace Bundles.Items
 				bundleList.Add(ItemIO.Save(item));
 			}
 			tag.Add("bundleList", bundleList);
+			if (Item.ModItem is BaseBundle)
+			{
+				tag.Add("Color", Item.color);
+			}
 		}
 
 		public override void LoadData(TagCompound tag)
@@ -273,6 +277,13 @@ namespace Bundles.Items
 			foreach (TagCompound tag2 in Enumerable.ToList<TagCompound>(tag.GetList<TagCompound>("bundleList")))
 			{
 				this.bundleList.Add(ItemIO.Load(tag2));
+			}
+			if (Item.ModItem is BaseBundle)
+			{
+				if (tag.ContainsKey("Color"))
+				{
+					Item.color = tag.Get<Color>("Color");
+				}
 			}
 		}
 
